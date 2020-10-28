@@ -9,7 +9,11 @@
                             <th class="text-center">#</th>
                             <th class="text-center">RGEN Target Sequence</th>
                             <th class="text-center"># of Matches</th>
-                            <th class="text-center">Match Sources</th>
+                            <th class="text-center">
+                                Match Sources
+                                <i class="fa fa-info-circle" data-html="true" data-toggle="tooltip" data-placement="top" title="How are these selected? <a href='/about'>Learn More</a>"></i>
+                                <!-- <ion-icon data-toggle="tooltip" title="How are these selected? <a href='/about'>Learn More</a>" name="help-circle-outline"></ion-icon> -->
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,73 +26,16 @@
                             <%= key %>
                           </td>
                           <td class="text-center">
-                            <%= targets[key] / 3 %>
+                            <%= Object.keys(targets[key]).length %>
                           </td>
                           <td class="text-center">
-                            <%= i %>
-                          </td>
+                            <% for(const site in targets[key]) { %>
+                                <a href=" <%= targets[key][site] %> " target="_blank"> <%= site %> </a><br>
+                            <% } %>
+                        </td>
                         </tr>
                       <% i++ } %>
-                        <!-- <tr>
-                            <td class="text-center">1.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">2.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">3.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">4.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">5.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">6.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">7.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">8.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">9.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">10.</td>
-                            <td class="text-center">CTCTGGTCGGGCACGACGCG<br></td>
-                            <td class="text-center">2/10<br></td>
-                            <td class="text-center">Crispr-direct, CAS-designer, CCTOP, CCTOP, CRISPRRPR&nbsp;<br></td>
-                        </tr> -->
+                   
                     </tbody>
                 </table>
             </div>

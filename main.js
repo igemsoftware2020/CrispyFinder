@@ -1,10 +1,11 @@
 // Modules to control application life and create native browser window
 const {
   app,
-  BrowserWindow
+  shell,
+  BrowserWindow,
 } = require("electron");
 const path = require("path");
-// const Scraper = require("./scraper");
+
 require("./app.js");
 
 function createWindow() {
@@ -17,14 +18,14 @@ function createWindow() {
     },
   });
 
-  // and load the index.html of the app.
-  // mainWindow.loadFile("crispy.html");
+
 
   mainWindow.loadURL("http://localhost:3000");
 
-  // resultWindow.loadFile("index.html");
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.on("new-window", function(event, url) {
+    event.preventDefault();
+    shell.openExternal(url);
+  });
 }
 
 // This method will be called when Electron has finished

@@ -6,40 +6,51 @@ const app = express();
 const scrape = require("./scraper");
 
 
-app.use(express.static("./resources/app/public"));
+// for testing!
+app.use(express.static("./public"));
 app.set("view engine", "ejs");
-app.set("views", "./resources/app/views");
+app.set("views", "./views");
+
+
+// app.use(express.static("./resources/app/public"));
+// app.set("view engine", "ejs");
+// app.set("views", "./resources/app/views");
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
-// run electron-packager ./ KSAKorea-Crispy
+// electron-packager ./ KSAKorea-Crispy
 
 
 app.get("/", (req, res) => {
   res.render("index");
 });
 
+
+
+
 app.post("/", async (req, res) => {
-  // get the seq from submitted form,
   const rawSeq = await req.body.seq.replace(/\n/g, "");
-  // scrape from our sites,
-  // async () => {
+ 
   const scrapeResult = await scrape(rawSeq);
-  // const scrapeResult = scrape(rawSeq);
-  console.log(scrapeResult);
-  // send scraped data to our result page to be displayed
+  
   res.render("result", {
     targets: scrapeResult,
     i: 1
   });
-  // }
 });
 
-// app.get("/result", (req, res) => {
-//   res.render("result");
-// });
+// 
+
+
+
+
+app.get("/about", (req, res) => {
+  console.log(req.body);
+  res.render("about");
+});
 
 app.listen(3000, () => {
   console.log("Server successfully started at port 3000.");
