@@ -16,12 +16,15 @@ app.set("views", "./views");
 // app.set("view engine", "ejs");
 // app.set("views", "./resources/app/views");
 
+// Run the following line to package the app into an executable
+// electron-packager ./ app-name
+
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
-// electron-packager ./ KSAKorea-Crispy
+
 
 
 app.get("/", (req, res) => {
@@ -42,13 +45,11 @@ app.post("/", async (req, res) => {
   });
 });
 
-// 
 
 
 
 
 app.get("/about", (req, res) => {
-  console.log(req.body);
   res.render("about");
 });
 
