@@ -3,26 +3,26 @@
     <div class="row">
       <div class="col-lg-6 my-auto h-75 text-center text-lg-left">
         <ul class="list-inline mb-2">
-          <li class="list-inline-item"><a href="#">About</a></li>
+          <li class="list-inline-item"><a href="/about">About/Attributions</a></li>
+          <!-- <li class="list-inline-item"><span>⋅</span></li> -->
+          <!-- <li class="list-inline-item"><a href="#">Contact</a></li> -->
+          <!-- <li class="list-inline-item"><span>⋅</span></li> -->
+          <!-- <li class="list-inline-item"><a href="/about">Attributions</a></li> -->
           <li class="list-inline-item"><span>⋅</span></li>
-          <li class="list-inline-item"><a href="#">Contact</a></li>
-          <li class="list-inline-item"><span>⋅</span></li>
-          <li class="list-inline-item"><a href="#">Attributions</a></li>
-          <li class="list-inline-item"><span>⋅</span></li>
-          <li class="list-inline-item"><a href="#">License</a></li>
+          <li class="list-inline-item"><a href="https://github.com/igemsoftware2020/CrispyFinder/blob/master/LICENSE">License</a></li>
         </ul>
         <p class="text-muted small mb-4 mb-lg-0">© IGEM 2020 KSA Korea</p>
       </div>
       <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
         <ul class="list-inline mb-0">
           <li class="list-inline-item">
-            <a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a>
+            <a href="https://www.facebook.com/ksakoreaigem"><i class="fa fa-facebook fa-2x fa-fw"></i></a>
           </li>
           <li class="list-inline-item">
-            <a href="#"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
+            <a href="https://www.youtube.com/channel/UCcV6yXc3UJNFaMYLcxpLHKQ"><i class="fa fa-youtube fa-2x fa-fw"></i></a>
           </li>
           <li class="list-inline-item">
-            <a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a>
+            <a href="https://www.instagram.com/ksakoreaigem/"><i class="fa fa-instagram fa-2x fa-fw"></i></a>
           </li>
         </ul>
       </div>
@@ -35,6 +35,15 @@
 <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 <script>
   $('[data-toggle="tooltip"]').tooltip({'delay':{'hide': 1000}});
+</script>
+<script>
+  let shell = require('electron').shell;
+  document.addEventListener('click', function (event) {
+  if (event.target.tagName === 'A' && event.target.href.startsWith('http')) {
+    event.preventDefault()
+    shell.openExternal(event.target.href)
+  }
+});
 </script>
 
 </body>
