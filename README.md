@@ -1,4 +1,4 @@
-# CrispyFinder
+# CrispyScraper
 
 Electron app that scrapes multiple sites and find the most relevant results
 
@@ -8,7 +8,7 @@ Electron app that scrapes multiple sites and find the most relevant results
 If npm isn't installed on your computer, install npm/node. 
 [https://www.npmjs.com/get-npm]
 
-unzip and move into the CrispyFinder-1.0.1 folder (With the README file) in your terminal using the cd command (ex. cd CrispyFinder-1.0.1) 
+unzip and move into the CrispyFinder-1.0.2 folder (With the README file) in your terminal using the cd command (ex. cd CrispyFinder-1.0.2) 
 
 run "npm i" to install all the necessary dependencies
 
