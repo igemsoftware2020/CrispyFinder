@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+<header
+  class="masthead text-white text-center"
+  style="
+    background: url('assets/img/bg-masthead.jpg') no-repeat center center;
+    background-size: cover;
+  "
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Enter in a plain nucleotide sequence below!</h1>
+      </div>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form action="/" method="POST">
+          <div class="form-row">
+            <div class="col-12 mb-3">
+              <textarea
+              name = "seq"
+                id="seq"
+                class="form-control form-control-lg"
+                rows="12"
+                placeholder="Enter sequence.."
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <button
+                class="btn btn-primary btn-block btn-lg"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+<%- include("partials/footer") %>

@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+<section>
+        <div class="container">
+            <h1 class="text-center mb-5">Search Results</h1>
+            <div class="table-responsive table-hover">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-center">RGEN Target Sequence</th>
+                            <th class="text-center"># of Matches</th>
+                            <th class="text-center">
+                                Match Sources
+                                <i class="fa fa-info-circle" data-html="true" data-toggle="tooltip" data-placement="top" title="How are these selected? <a href='/about'>Learn More</a>"></i>
+                                <!-- <ion-icon data-toggle="tooltip" title="How are these selected? <a href='/about'>Learn More</a>" name="help-circle-outline"></ion-icon> -->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <% for(const key in targets) { %>
+                        <tr>
+                          <td class="text-center">
+                            <%= i %>
+                          </td>
+                          <td class="text-center">
+                            <%= key %>
+                          </td>
+                          <td class="text-center">
+                            <%= Object.keys(targets[key]).length %>
+                          </td>
+                          <td class="text-center">
+                            <% for(const site in targets[key]) { %>
+                                <a href=" <%= targets[key][site] %> " target="_blank"> <%= site %> </a><br>
+                            <% } %>
+                        </td>
+                        </tr>
+                      <% i++ } %>
+                   
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+<%- include("partials/footer") %>
