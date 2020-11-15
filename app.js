@@ -12,9 +12,12 @@ app.set("view engine", "ejs");
 app.set("views", "./views");
 
 
+// comment out the above 3 testing lines, and uncomment these next 3 lines for electron packager
 // app.use(express.static("./resources/app/public"));
 // app.set("view engine", "ejs");
 // app.set("views", "./resources/app/views");
+
+
 
 // Run the following line to package the app into an executable
 // electron-packager ./ app-name
